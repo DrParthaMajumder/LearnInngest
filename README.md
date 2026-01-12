@@ -58,6 +58,31 @@ Open Inngest UI:
 
 ---
 
+## Folder Structure
+
+```text
+LearnInngest/
+  README.md
+  backend/
+    main.py                      # FastAPI entrypoint + mounts /api/inngest
+    requirements.txt
+    .env
+    app/
+      inngest_app.py              # inngest_client + chat_worker function
+      api/
+        routes/
+          v1/
+            chat.py               # POST /chat emits event + GET /chat/result polls
+      services/
+        chat_service.py           # chat_completion() (OpenRouter via LangChain)
+      utils/
+        helpers.py
+    learning.ipynb
+    results.ipynb
+```
+
+---
+
 ## Architecture (Option A)
 
 ### Why Option A?
